@@ -5,9 +5,10 @@ sudo apt install -y --no-install-recommends xserver-xorg xserver-xorg-input-evde
 
 # Download  Electron 5.0.2
 cd ~
+wget https://github.com/electron/electron/releases/download/v5.0.2/electron-v5.0.2-linux-armv7l.zip
 mkdir Electron
 cd Electron
-unzip ~/artifacts/electron-v5.0.2-linux-armv7l.zip
+unzip ~/electron-v5.0.2-linux-armv7l.zip
 
 # install the dependencies for Electron
 sudo apt install -y --no-install-recommends libnss3 libgtkextra-dev libgtk-3-0 libxtst-dev libxss1 

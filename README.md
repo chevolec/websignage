@@ -32,3 +32,4 @@ To Do
 
 - Generate website on the fly, after update images
 - set the screen size by variable
+- Check if there is an update in the FTP file
