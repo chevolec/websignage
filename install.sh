@@ -27,6 +27,7 @@ echo ''
 echo 'Set sh files exec modes '
 echo ''
 
+mv ~/update_display.cron.bak ~/update_display.cron
 chmod +x ~/autorun.sh
 chmod +x ~/update_display.cron
 
