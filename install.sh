@@ -19,8 +19,8 @@ chmod +x ~/update_display.cron
 
 
 # Clean up files
-rm install.sh
-rm README.md
+rm ~/install.sh
+rm ~/README.md
 #sudo shutdown -r now
 
 #Manually add lines to rc.local
