@@ -1,0 +1,9 @@
+#!/bin/bash
+wget --user=<user> --password=<pasword> -O <output file> ftp://<ftp server>/<file>
+cd $HOME/display
+unzip -jo $HOME/Promos.zip
+rm $HOME/Promos.zip
+
+
+
+pkill electron
