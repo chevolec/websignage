@@ -9,7 +9,7 @@ To install you must have git  and have the files in the home folder
 sudo apt update
 sudo apt install git vim -y
 cd ~
-git clone https://github.com/chevolec/websineage.git
+git clone https://github.com/chevolec/websignage.git
 mv websineage/* ./
 rm -fr sineage_dist
 chmod +x install.sh
