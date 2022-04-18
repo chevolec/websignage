@@ -10,8 +10,8 @@ sudo apt update
 sudo apt install git vim -y
 cd ~
 git clone https://github.com/chevolec/websignage.git
-mv websineage/* ./
-rm -fr sineage_dist
+mv websignage/* ./
+rm -fr websignage
 chmod +x install.sh
 ```
 
