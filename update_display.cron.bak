@@ -1,4 +1,8 @@
 #!/bin/bash
+
+
+smbclient '//ip add/Carpeta Compartida' --directory "carpeta con archivos" -W dominio -U usuario%contraseña --debuglevel=0 -c 'prompt OFF; mget archivo'
+
 wget --user=<user> --password=<pasword> -O <output file> ftp://<ftp server>/<file>
 cd $HOME/display
 unzip -jo $HOME/Promos.zip
