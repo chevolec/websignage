@@ -1,21 +1,5 @@
 #!/bin/bash
 
-
-# smbclient '//<ip add>/<Carpeta Compartida>' --directory '<carpeta con archivos>' -W <dominio> -U <usuario%contraseña> --debuglevel=0 -c 'prompt OFF; mget <archivo.zip>'
-
-# wget --user=<user> --password=<pasword> -O <output file> ftp://<ftp server>/<file>
-# mkdir $HOME/img
-# cd $HOME/img
-# unzip -jo $HOME/<archivo.zip>
-# rm $HOME/<archivo.zip>
-
-
-
-# pkill electron
-
-
-
-
 rm -fr ./display/img/*
 # smbclient '//<ip add>/<Carpeta Compartida>' --directory '<carpeta con archivos>' -W <dominio> -U <usuario%contraseña> --debuglevel=0 -c 'prompt OFF; mget <archivo.zip>'
 # wget --user=<user> --password=<pasword> -O <output file> ftp://<ftp server>/<file>
