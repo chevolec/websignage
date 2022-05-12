@@ -1,14 +1,46 @@
 #!/bin/bash
 
+rm -fr ./display/img/*
+# smbclient '//<ip add>/<Carpeta Compartida>' --directory '<carpeta con archivos>' -W <dominio> -U <usuario%contraseña> --debuglevel=0 -c 'prompt OFF; mget <archivo.zip>'
+# wget --user=<user> --password=<pasword> -O <output file> ftp://<ftp server>/<file>
+mv recepcion.zip ./display/img/
+cd ./display/img/
+unzip -jo ./recepcion.zip 
+rm  ./recepcion.zip 
+cd ..
 
-smbclient '//<ip add>/<Carpeta Compartida>' --directory '<carpeta con archivos>' -W <dominio> -U <usuario%contraseña> --debuglevel=0 -c 'prompt OFF; mget <archivo.zip>'
+echo "<!DOCTYPE HTML>" > index.html
+echo "<html>" >> index.html
+echo "<head>" >> index.html
+echo "  <meta charset='utf-8'>" >> index.html
+echo "  <meta name='viewport' content='width=device-width, initial-scale=1.0'>" >> index.html
+echo "  <title>COSMOCEL</title>" >> index.html
+echo "  <link rel='stylesheet' type='text/css' href='inc/style.css'> " >> index.html
+echo "</head>" >> index.html
+echo "<body>" >> index.html
+echo "    <div id='slideshow-example' data-component='slideshow'>" >> index.html
+echo "        <div role='list'>" >> index.html
 
-wget --user=<user> --password=<pasword> -O <output file> ftp://<ftp server>/<file>
-mkdir $HOME/img
-cd $HOME/img
-unzip -jo $HOME/<archivo.zip>
-rm $HOME/<archivo.zip>
+files=(img/*)
+
+for file in ${files[@]} 
+do
+	echo "            <div class='slide'>" >> index.html
+	echo "                <img id='slideimage' src='$file'  >" >> index.html
+	echo "                <div class='bottom-right'>$myip</div>"
+	echo "            </div>" >> index.html
+done
 
 
+echo "        </div>" >> index.html
+echo "    </div>" >> index.html
+echo "</body>" >> index.html
+echo "<script src='inc/script.js'></script>" >> index.html
+echo "<script>document.getElementById('slideimage').height = window.innerHeight;</script>" >> index.html
+echo "</html>" >> index.html
+
+
+mv index.html display/index.html
 
 pkill electron
+
