@@ -14,7 +14,7 @@ echo "<html>" >> index.html
 echo "<head>" >> index.html
 echo "  <meta charset='utf-8'>" >> index.html
 echo "  <meta name='viewport' content='width=device-width, initial-scale=1.0'>" >> index.html
-echo "  <title>Signage Pi</title>" >> index.html
+echo "  <title>COSMOCEL</title>" >> index.html
 echo "  <link rel='stylesheet' type='text/css' href='inc/style.css'> " >> index.html
 echo "</head>" >> index.html
 echo "<body>" >> index.html
@@ -26,7 +26,8 @@ files=(img/*)
 for file in ${files[@]} 
 do
 	echo "            <div class='slide'>" >> index.html
-	echo "                <img src='$file'  >" >> index.html
+	echo "                <img id='slideimage' src='$file'  >" >> index.html
+	echo "                <div class='bottom-right'>$myip</div>"
 	echo "            </div>" >> index.html
 done
 
@@ -34,9 +35,12 @@ done
 echo "        </div>" >> index.html
 echo "    </div>" >> index.html
 echo "</body>" >> index.html
-echo "        <script src='inc/script.js'></script>" >> index.html
+echo "<script src='inc/script.js'></script>" >> index.html
+echo "<script>document.getElementById('slideimage').height = window.innerHeight;</script>" >> index.html
 echo "</html>" >> index.html
 
+
+mv index.html display/index.html
 
 pkill electron
 
